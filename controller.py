@@ -135,8 +135,8 @@ def start_wyspider(siteurl):  # 启动爬虫和fuzz类
     #  将其因变量文件列表中的内容进行分类
     # ----------------------------------------------------
     for fuzzfile in fuzzfile_request_set:
-        if fuzzfile.endswith('m.rar'):
-            print(fuzzfile)
+        # if fuzzfile.endswith('m.rar'):
+        #     print(fuzzfile)
         if basedomain in fuzzfile:
             httpurl = urlparse.urlparse(
                 fuzzfile).scheme + '://' + urlparse.urlparse(fuzzfile).netloc + '/'
