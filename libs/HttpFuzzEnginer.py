@@ -34,9 +34,9 @@ class FuzzEnginer(object):
                 try:  # 用hack方法，no_timeout读取Queue队列，直接异常退出线程避免阻塞
                     url = self.queue.get_nowait()
                     results = http_request_get(url)
-                    if url.endswith('m.rar'):
-                        print("[%s] %s => %s" % (results.status_code, url,
-                                                 results.url))  # 客户端调试信息
+                    # if url.endswith('m.rar'):
+                    #     print("[%s] %s => %s" % (results.status_code, url,
+                    #                              results.url))  # 客户端调试信息
                     if results.status_code in exclude_status:
                         # 客户端调试信息
                         # print "[%s] %s => %s %s" % (results.status_code, url, results.url, self.fuzz_type)
