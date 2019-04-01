@@ -1,3 +1,6 @@
+# 改处ring04的weakfilescan
+添加了自己的想法, 没有fork过来, 原版请访问[weakfilescan](https://github.com/ring04h/weakfilescan)
+
 # weakfilescan
 基于爬虫，动态收集扫描目标相关信息后进行二次整理形成字典规则，利用动态规则的多线程敏感信息泄露检测工具，支持多种个性化定制选项，包括：
 * 规则字典多样化定义（支持正则、整数、字符、日期）
