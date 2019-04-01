@@ -4,28 +4,28 @@
 # http://github.com/ring04h/weakfilescan
 
 """
-	weakfilescan
-	userage: python wyspider.py http://wuyun.org
+    weakfilescan
+    userage: python wyspider.py http://wuyun.org
 """
 
 import sys
+import random
 import libs.requests as requests
 from controller import *
 
 if __name__ == "__main__":
-	if len(sys.argv) == 3:
-		print json.dumps(start_wyspider(sys.argv[1]), indent=2)
-		sys.exit(0)
-	elif len(sys.argv) == 2:
-		print json.dumps(start_wyspider(sys.argv[1]),indent=2)
-		sys.exit(0)
-	else:
-		print ("usage: %s http://wuyun.org php" % sys.argv[0])
-		sys.exit(-1)
-
-
-
-
-
-
-
+    if len(sys.argv) == 3:
+        output_file = 'output_' + str(random.randint(1000, 9999)) + '.json'
+        with open(sys.argv[1], 'r') as f:
+            for line in f:
+                result = json.dumps(start_wyspider(line), indent=2)
+                with open(output_file, 'a') as fw:
+                    fw.write(result)
+                    fw.write('\n')
+        sys.exit(0)
+    elif len(sys.argv) == 2:
+        print json.dumps(start_wyspider(sys.argv[1]), indent=2)
+        sys.exit(0)
+    else:
+        print("usage: %s http://wuyun.org php" % sys.argv[0])
+        sys.exit(-1)
